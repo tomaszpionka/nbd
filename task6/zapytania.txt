@@ -1,0 +1,66 @@
+#i
+#1
+MATCH p = allShortestPaths((:town {name:'Darjeeling'}) - [*1..10] -> (:peak {name:'Sandakphu'})) RETURN p
+
+#2
+MATCH p = (:town {name:'Darjeeling'}) - [*1..5 {winter: 'true'}] -> (:peak {name:'Sandakphu'})
+WITH min(length(p)) as minPathLen, collect(p) as paths
+RETURN [path in paths WHERE length(path) = minPathLen]
+
+#3
+MATCH p = (:town {name:'Darjeeling'}) - [*1..10] -> (:peak {name:'Sandakphu'})
+RETURN p, reduce(acc = 0, r in relationships(p) | acc + r.distance) as distance
+ORDER BY distance
+
+#ii
+MATCH (f:Flight) <-[:ASSIGN]- (t:Ticket)
+WITH f, min(t.price) as minPrice
+SET f.minPrice = minPrice
+
+MATCH (f:Flight) <-[:ASSIGN]- (t:Ticket)
+WHERE t.class = 'business'
+SET f.businessPrice = t.price
+
+MATCH (o:Airport) <-[:ORIGIN]- (f:Flight) -[:DESTINATION]-> (d:Airport)
+CREATE (o) -[:FLIGHT {flightId: f.id, minPrice: f.minPrice, businessPrice: f.businessPrice}]-> (d)
+
+MATCH (f:Flight)
+REMOVE f.minPrice, f.businessPrice
+
+#4
+MATCH (a:Airport) -[f:FLIGHT]-> (:Airport) 
+RETURN a, count(f) as flightsCount ORDER BY flightsCount DESC
+
+#5
+MATCH p = (a:Airport {name: 'LAX'}) -[:FLIGHT *1..5]-> (d:Airport)
+WHERE reduce(acc=0, flight in relationships(p) | acc + flight.minPrice) < 3000
+RETURN DISTINCT d
+
+#6
+MATCH p = (:Airport {name: 'LAX'}) -[:FLIGHT *1..3]-> (:Airport {name: 'DAY'})
+RETURN p, reduce(acc=0, flight in relationships(p) | acc + flight.minPrice) as price
+ORDER BY price
+
+#7
+MATCH p = (:Airport {name: 'LAX'}) -[:FLIGHT *1..3]-> (:Airport {name: 'DAY'})
+RETURN p, reduce(acc=0, flight in relationships(p) | acc + flight.minPrice) as price
+ORDER BY price
+LIMIT 1
+
+#8
+MATCH p = (:Airport {name: 'LAX'}) -[:FLIGHT *1..3]-> (:Airport {name: 'DAY'})
+RETURN p, reduce(acc=0, flight in relationships(p) | acc + flight.businessPrice) as price
+ORDER BY price
+LIMIT 1
+
+#9
+MATCH (f:Flight) --> (a:Airport)
+RETURN f.airline, count(DISTINCT a) as cities
+ORDER BY cities DESC
+
+#10
+MATCH p = (o:Airport) -[f1:FLIGHT]-> (:Airport) -[f2:FLIGHT]-> (d:Airport)
+WHERE o <> d
+RETURN p, f1.minPrice + f2.minPrice as price
+ORDER BY price
+LIMIT 1
