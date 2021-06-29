@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvl/OkrUEIpTInMfKwHTb/xZfFgA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s23702>; rel="up"
+Last-Modified: Tue, 29 Jun 2021 17:57:22 GMT
+ETag: "3n2LRGu8xj7PnBxX56hp04"
+Date: Tue, 29 Jun 2021 17:57:22 GMT
+Content-Type: application/json
+Content-Length: 45
+
+'{name:olaf,stamina:21,3:3.0,extra:42}'
