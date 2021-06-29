@@ -1,0 +1,65 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvl/OkrUEIpTImMfKsOOG/y2+LAA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s23702>; rel="up"
+Last-Modified: Tue, 29 Jun 2021 17:47:36 GMT
+ETag: "1PbPpKnyq70zj3ZMyzcmw0"
+Date: Tue, 29 Jun 2021 17:47:36 GMT
+Content-Type: application/json
+Content-Length: 37
+
+'{name:olaf,stamina:21,3:3.0,4:null}'
+
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvl/OkpkAEUpkzmNl8Lrpf4svCwA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s23702>; rel="up"
+Last-Modified: Tue, 29 Jun 2021 17:50:02 GMT
+ETag: "3cKC365vjOGhWFlxfMOX8L"
+Date: Tue, 29 Jun 2021 17:50:02 GMT
+Content-Type: application/json
+Content-Length: 35
+
+'{name:karol,stamina:20,3:7.0,4:2}'
+
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvl/2/40ZRCiRMY+VYf5N/1t8WQA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s23702>; rel="up"
+Last-Modified: Tue, 29 Jun 2021 17:51:27 GMT
+ETag: "HoEA2bEWaMsz6SZLIqN8y"
+Date: Tue, 29 Jun 2021 17:51:27 GMT
+Content-Type: application/json
+Content-Length: 37
+
+'{name:jan,stamina:39,3:12.0,4:null}'
+
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvl/2/9U9iFAiYx4rw/Gb/rf4sgA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s23702>; rel="up"
+Last-Modified: Tue, 29 Jun 2021 17:52:07 GMT
+ETag: "4XFs5OGOLD6GyvsTrcFBn1"
+Date: Tue, 29 Jun 2021 17:52:07 GMT
+Content-Type: application/json
+Content-Length: 34
+
+'{name:emil,stamina:3,3:0.76,4:a}'
+
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvl/OwboBIpTImMfKcOOm/y2+LAA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s23702>; rel="up"
+Last-Modified: Tue, 29 Jun 2021 17:52:24 GMT
+ETag: "1RG4cslpNPuLP3xXmA6shK"
+Date: Tue, 29 Jun 2021 17:52:24 GMT
+Content-Type: application/json
+Content-Length: 39
+
+'{name:frank,stamina:45,3:4.20,4:null}'
+
