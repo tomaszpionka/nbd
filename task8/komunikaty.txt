@@ -1,0 +1,36 @@
+CREATE DOCUMENT
+<Response [204]>
+{'Vary': 'Accept-Encoding', 'Server': 'MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)', 'Date': 'Tue, 29 Jun 2021 18:21:50 GMT', 'Content-Type': 'application/json', 'Content-Length': '0', 'Content-Encoding': 'gzip'}
+b''
+
+RETRIEVE DOCUMENT
+<Response [200]>
+{'X-Riak-Vclock': 'a85hYGBgzGDKBVI8+xkWvl/OqekNEUpkzGNl2PfA/xZfFgA=', 'Vary': 'Accept-Encoding', 'Server': 'MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)', 'Link': '</buckets/s23702>; rel="up"', 'Last-Modified': 'Tue, 29 Jun 2021 18:21:50 GMT', 'ETag': '"31Uxr0tRpl00FWOdh9DvPR"', 'Date': 'Tue, 29 Jun 2021 18:21:50 GMT', 'Content-Type': 'application/json', 'Content-Length': '75', 'Content-Encoding': 'gzip'}
+b'{"name": "mariusz", "stamina": 21, "3": 3.0, "4": 1, "extra": 420}'
+
+PRINT RETRIEVED DOCUMENT
+{'name': 'mariusz', 'stamina': 21, '3': 3.0, '4': 1, 'extra': 420}
+
+MODIFY DOCUMENT
+<Response [204]>
+{'Vary': 'Accept-Encoding', 'Server': 'MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)', 'Date': 'Tue, 29 Jun 2021 18:21:50 GMT', 'Content-Type': 'application/json', 'Content-Length': '0', 'Content-Encoding': 'gzip'}
+b''
+
+RETRIEVE MODIFIED DOCUMENT
+<Response [200]>
+{'X-Riak-Vclock': 'a85hYGBgzGDKBVI8+xkWvl/OqekNEUpkymNl2PfA/xZfFgA=', 'Vary': 'Accept-Encoding', 'Server': 'MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)', 'Link': '</buckets/s23702>; rel="up"', 'Last-Modified': 'Tue, 29 Jun 2021 18:21:50 GMT', 'ETag': '"3zkSYBuI8nY1w9AsTZrXHn"', 'Date': 'Tue, 29 Jun 2021 18:21:50 GMT', 'Content-Type': 'application/json', 'Content-Length': '76', 'Content-Encoding': 'gzip'}
+b'{"name": "mariusz", "stamina": 22, "3": 3.0, "4": 1, "extra": 666}'
+
+PRINT RETRIEVED MODIFIED DOCUMENT
+{'name': 'mariusz', 'stamina': 22, '3': 3.0, '4': 1, 'extra': 666}
+
+DELETE DOCUMENT
+<Response [204]>
+{'Vary': 'Accept-Encoding', 'Server': 'MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)', 'Date': 'Tue, 29 Jun 2021 18:21:50 GMT', 'Content-Type': 'application/json', 'Content-Length': '0', 'Content-Encoding': 'gzip'}
+b''
+
+RETRIEVE DELETED DOCUMENT
+<Response [404]>
+{'X-Riak-Vclock': 'a85hYGBgzGDKBVI8+xkWvl/OqekNEUpkzmNl2PfA/xZfFgA=', 'X-Riak-Deleted': 'true', 'Server': 'MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)', 'Date': 'Tue, 29 Jun 2021 18:21:50 GMT', 'Content-Type': 'text/plain', 'Content-Length': '10'}
+b'not found\n'
+
